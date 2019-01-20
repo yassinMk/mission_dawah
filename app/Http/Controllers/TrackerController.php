@@ -14,7 +14,7 @@ class TrackerController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Tracker::orderBy('created_at','desc')->get(), 200);
     }
 
     /**
@@ -36,6 +36,10 @@ class TrackerController extends Controller
     public function store(Request $request)
     {
         error_log("post tracker");
+        $user_data = new Tracker($request->all());
+        $user_data->save();
+
+        return response()->json($user_data, 200);;
     }
 
     /**
