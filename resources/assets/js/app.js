@@ -1,15 +1,23 @@
 require('./bootstrap');
 import Vue from 'vue';
-import Tracker from './components/Tracker.vue';
-import TrackList from './components/TrackList.vue';
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import VueRouter from 'vue-router';
+import routes from './routes';
+import App from './components/App.vue';
+import navbar from './components/navbar.vue';
 
 Vue.use(BootstrapVue);
+Vue.use(VueRouter);
 
+const router = new VueRouter({
+    routes,
+    mode: 'history'
+});
 
 new Vue({   
     el: '#app',
-    components: {Tracker,TrackList}
+    router,
+    components:{App,navbar}
 });

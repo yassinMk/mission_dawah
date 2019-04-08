@@ -1,17 +1,11 @@
 @extends('layouts.app')
 
+@section('navbar')
+    <navbar></navbar>
+@endsection
+
 @section('content')
-<div class="container" id="app">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <tracker></tracker>
-        </div>
-    </div>
-    <hr>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <track-list></track-list>
-        </div>
-    </div>
+<div class="container">
+    <App></App>
 </div>
 @endsection

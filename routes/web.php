@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix'=>'api'],function() {
     Route::resource('trackers', 'TrackerController');
 });
+
+Route::get('/{any}', 'HomeController@index')->where('any', '.*');

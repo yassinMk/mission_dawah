@@ -16,7 +16,7 @@
 
   <!-- the modal -->
   <b-modal ref="person" title="Edit person data">
-    <b-form @submit="onSubmit">
+    <div>
       <b-form-group id="exampleInputGroup1"
                     label="name:"
                     label-for="name">
@@ -37,7 +37,11 @@
                       placeholder="Enter phone">
         </b-form-input>
       </b-form-group>
-    </b-form>
+
+      <b-button variant="outline-primary">الصلاة</b-button>
+      <b-button variant="outline-primary">إيقاف التدخين</b-button>
+
+    </div>
     <div slot="modal-footer">
       <b-btn variant="warning" @click="hideModal">
         Close
