@@ -9,7 +9,11 @@
           :key="person.id">
           {{person.name}}
           <!-- <span class="badge badge-primary ">{{person.phone}}</span> -->
-          <b-btn variant="primary" @click="editPerson(person)">Show Person</b-btn>
+            <router-link :to="'/persons/'+person.id">
+          <b-btn variant="primary">
+              Show Person
+          </b-btn>
+            </router-link>
         </li>
       </ul>
     </div>
