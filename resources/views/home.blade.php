@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container-fluit">
     <App></App>
 </div>
 @endsection

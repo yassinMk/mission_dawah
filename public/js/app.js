@@ -1802,6 +1802,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -55975,10 +56009,119 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [_vm._v("person " + _vm._s(_vm.$route.params.id) + " board")])
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-sm-3" },
+        [
+          _c(
+            "b-card",
+            { attrs: { "no-body": "", header: "Prayer" } },
+            [
+              _c(
+                "b-list-group",
+                { attrs: { flush: "" } },
+                [
+                  _c("b-list-group-item", { attrs: { href: "#" } }, [
+                    _vm._v("التحبيب للصلاة")
+                  ]),
+                  _vm._v(" "),
+                  _c("b-list-group-item", { attrs: { href: "#" } }, [
+                    _vm._v("تعليم الوضوء")
+                  ]),
+                  _vm._v(" "),
+                  _c("b-list-group-item", { attrs: { href: "#" } }, [
+                    _vm._v("تعليم الصلاة")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-list-group",
+                { attrs: { flush: "" } },
+                [
+                  _c("b-list-group-item", { attrs: { href: "#" } }, [
+                    _c("i", { staticClass: "fa fa-plus-square" }),
+                    _vm._v(" New task")
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-sm-3" },
+        [
+          _c(
+            "b-card",
+            { attrs: { "no-body": "", header: "Fasting" } },
+            [
+              _c(
+                "b-list-group",
+                { attrs: { flush: "" } },
+                [
+                  _c("b-list-group-item", { attrs: { href: "#" } }, [
+                    _vm._v("التحبيب للصوم")
+                  ]),
+                  _vm._v(" "),
+                  _c("b-list-group-item", { attrs: { href: "#" } }, [
+                    _vm._v("تعليم الصوم")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "b-list-group",
+                { attrs: { flush: "" } },
+                [
+                  _c("b-list-group-item", { attrs: { href: "#" } }, [
+                    _c("i", { staticClass: "fa fa-plus-square" }),
+                    _vm._v(" New task")
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-sm-2" },
+        [
+          _c("b-button", { attrs: { variant: "outline-primary" } }, [
+            _c("i", { staticClass: "fa fa-plus-square" }),
+            _vm._v(" New list")
+          ])
+        ],
+        1
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-flex justify-content-center" }, [
+      _c("h1", [_vm._v("محمد ولد حومتي")])
+    ])
+  }
+]
 render._withStripped = true
 
 
