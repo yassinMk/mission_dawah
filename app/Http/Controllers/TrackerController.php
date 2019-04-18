@@ -45,21 +45,22 @@ class TrackerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Traker  $traker
+     * @param  \App\Tracker  $tracker
      * @return \Illuminate\Http\Response
      */
-    public function show(Traker $traker)
+    public function show(Tracker $tracker)
     {
-        //
+        // dd($tracker);
+        return response()->json($tracker, 200);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Traker  $traker
+     * @param  \App\Tracker  $tracker
      * @return \Illuminate\Http\Response
      */
-    public function edit(Traker $traker)
+    public function edit(Tracker $tracker)
     {
         //
     }
@@ -68,10 +69,10 @@ class TrackerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Traker  $traker
+     * @param  \App\Tracker  $tracker
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Traker $traker)
+    public function update(Request $request, Tracker $tracker)
     {
         //
     }
@@ -79,10 +80,10 @@ class TrackerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Traker  $traker
+     * @param  \App\Tracker  $tracker
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Traker $traker)
+    public function destroy(Tracker $tracker)
     {
         //
     }

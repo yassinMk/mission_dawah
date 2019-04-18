@@ -1796,6 +1796,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -1836,7 +1844,74 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      person: ''
+    };
+  },
+  methods: {
+    getPerson: function () {
+      var _getPerson = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return fetch("/api/trackers/".concat(this.$route.params.id));
+
+              case 2:
+                response = _context.sent;
+                _context.next = 5;
+                return response.json();
+
+              case 5:
+                this.person = _context.sent;
+                this.person.lists = [{
+                  name: 'Prayer',
+                  tasks: []
+                }, {
+                  name: 'Fasting',
+                  tasks: []
+                }];
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function getPerson() {
+        return _getPerson.apply(this, arguments);
+      }
+
+      return getPerson;
+    }(),
+    newList: function newList() {
+      this.person.lists.push({
+        name: '',
+        tasks: []
+      });
+      console.log('this.person.lists: ', this.person.lists);
+      this.$forceUpdate();
+    }
+  },
+  mounted: function mounted() {
+    console.log(this.$route); //should return object
+
+    console.log(this.$route.params); //should return object 
+
+    console.log(this.$route.params.id); //should return id of URL param 
+
+    this.getPerson();
+  }
+});
 
 /***/ }),
 
@@ -56009,119 +56084,73 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { staticClass: "d-flex justify-content-center" }, [
+      _c("h1", [_vm._v(_vm._s(this.person.name))])
+    ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-sm-3" },
-        [
-          _c(
-            "b-card",
-            { attrs: { "no-body": "", header: "Prayer" } },
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm._l(_vm.person.lists, function(list) {
+          return _c(
+            "div",
+            { key: list.name, staticClass: "col-sm-3" },
             [
               _c(
-                "b-list-group",
-                { attrs: { flush: "" } },
+                "b-card",
+                { attrs: { "no-body": "", header: list.name } },
                 [
-                  _c("b-list-group-item", { attrs: { href: "#" } }, [
-                    _vm._v("التحبيب للصلاة")
-                  ]),
+                  _vm._l(list.tasks, function(task) {
+                    return _c("b-list-group", {
+                      key: task.name,
+                      attrs: { flush: "" }
+                    })
+                  }),
                   _vm._v(" "),
-                  _c("b-list-group-item", { attrs: { href: "#" } }, [
-                    _vm._v("تعليم الوضوء")
-                  ]),
-                  _vm._v(" "),
-                  _c("b-list-group-item", { attrs: { href: "#" } }, [
-                    _vm._v("تعليم الصلاة")
-                  ])
+                  _c(
+                    "b-list-group",
+                    { attrs: { flush: "" } },
+                    [
+                      _c("b-list-group-item", { attrs: { href: "#" } }, [
+                        _c("i", { staticClass: "fa fa-plus-square" }),
+                        _vm._v(" New task")
+                      ])
+                    ],
+                    1
+                  )
                 ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-list-group",
-                { attrs: { flush: "" } },
-                [
-                  _c("b-list-group-item", { attrs: { href: "#" } }, [
-                    _c("i", { staticClass: "fa fa-plus-square" }),
-                    _vm._v(" New task")
-                  ])
-                ],
-                1
+                2
               )
             ],
             1
           )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-sm-3" },
-        [
-          _c(
-            "b-card",
-            { attrs: { "no-body": "", header: "Fasting" } },
-            [
-              _c(
-                "b-list-group",
-                { attrs: { flush: "" } },
-                [
-                  _c("b-list-group-item", { attrs: { href: "#" } }, [
-                    _vm._v("التحبيب للصوم")
-                  ]),
-                  _vm._v(" "),
-                  _c("b-list-group-item", { attrs: { href: "#" } }, [
-                    _vm._v("تعليم الصوم")
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "b-list-group",
-                { attrs: { flush: "" } },
-                [
-                  _c("b-list-group-item", { attrs: { href: "#" } }, [
-                    _c("i", { staticClass: "fa fa-plus-square" }),
-                    _vm._v(" New task")
-                  ])
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-sm-2" },
-        [
-          _c("b-button", { attrs: { variant: "outline-primary" } }, [
-            _c("i", { staticClass: "fa fa-plus-square" }),
-            _vm._v(" New list")
-          ])
-        ],
-        1
-      )
-    ])
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-sm-2" },
+          [
+            _c(
+              "b-button",
+              {
+                attrs: { variant: "outline-primary" },
+                on: { click: _vm.newList }
+              },
+              [
+                _c("i", { staticClass: "fa fa-plus-square" }),
+                _vm._v(" New list")
+              ]
+            )
+          ],
+          1
+        )
+      ],
+      2
+    )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d-flex justify-content-center" }, [
-      _c("h1", [_vm._v("محمد ولد حومتي")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
