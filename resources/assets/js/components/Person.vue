@@ -8,6 +8,9 @@
         <div class="row">
             <div class="col-sm-3" v-for="list in person.lists" :key="list.name">
                 <b-card no-body :header="list.name">
+                    <div v-if="list.new" slot="header">
+                        <b-form-input v-model="list.name" placeholder="Enter list name"></b-form-input>
+                    </div>
                     <b-list-group flush v-for="task in list.tasks" :key="task.name">
                         <!-- <b-list-group-item href="#">التحبيب للصلاة</b-list-group-item>
                         <b-list-group-item href="#">تعليم الوضوء</b-list-group-item>
@@ -63,6 +66,7 @@ export default {
         },
         newList() {
             this.person.lists.push({
+                new: true,
                 name: '',
                 tasks: []
             })

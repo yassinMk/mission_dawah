@@ -84,7 +84,7 @@ export default {
       this.$refs.person.hide();
     },
     async getPersons() {
-      const response = await fetch("/api/trackers/");
+      const response = await fetch("/api/trackers");
       this.persons = await response.json();
     }
   },

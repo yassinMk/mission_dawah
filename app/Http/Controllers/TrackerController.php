@@ -38,8 +38,8 @@ class TrackerController extends Controller
         error_log("post tracker");
         $user_data = new Tracker($request->all());
         $user_data->save();
-
-        return response()->json($user_data, 200);;
+        dd($user_data);
+        return response()->json($user_data, 200);
     }
 
     /**

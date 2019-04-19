@@ -45,7 +45,7 @@ export default {
       submit(e) {
         e.preventDefault();
         console.log('this.person: ', this.person);
-        axios.post('/api/trackers/',this.person)
+        axios.post('/api/trackers',this.person)
         .then(res=>{
             console.log('res: ', res);
             this.$root.$emit('personAdded');

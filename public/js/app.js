@@ -1845,6 +1845,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1895,6 +1898,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }(),
     newList: function newList() {
       this.person.lists.push({
+        new: true,
         name: '',
         tasks: []
       });
@@ -2025,7 +2029,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return fetch("/api/trackers/");
+                return fetch("/api/trackers");
 
               case 2:
                 response = _context.sent;
@@ -2119,7 +2123,7 @@ __webpack_require__.r(__webpack_exports__);
 
       e.preventDefault();
       console.log('this.person: ', this.person);
-      axios.post('/api/trackers/', this.person).then(function (res) {
+      axios.post('/api/trackers', this.person).then(function (res) {
         console.log('res: ', res);
 
         _this.$root.$emit('personAdded');
@@ -56101,6 +56105,26 @@ var render = function() {
                 "b-card",
                 { attrs: { "no-body": "", header: list.name } },
                 [
+                  list.new
+                    ? _c(
+                        "div",
+                        { attrs: { slot: "header" }, slot: "header" },
+                        [
+                          _c("b-form-input", {
+                            attrs: { placeholder: "Enter list name" },
+                            model: {
+                              value: list.name,
+                              callback: function($$v) {
+                                _vm.$set(list, "name", $$v)
+                              },
+                              expression: "list.name"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
                   _vm._l(list.tasks, function(task) {
                     return _c("b-list-group", {
                       key: task.name,
@@ -70866,8 +70890,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/yassine/projects/personal/mission_dawah/resources/assets/js/app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! /home/yassine/projects/personal/mission_dawah/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\missiondawah\resources\assets\js\app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\missiondawah\resources\assets\sass\app.scss */"./resources/assets/sass/app.scss");
 
 
 /***/ })
