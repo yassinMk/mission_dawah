@@ -7,7 +7,13 @@ import VueRouter from 'vue-router';
 import routes from './routes';
 import App from './components/App.vue';
 import navbar from './components/navbar.vue';
-
+import VueSweetalert2 from 'vue-sweetalert2';
+const options = {
+    confirmButtonColor: '#41b882',
+    cancelButtonColor: '#ff7674'
+}
+  
+Vue.use(VueSweetalert2, options)
 Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 

@@ -5,6 +5,7 @@
             <!-- <h1>محمد ولد حومتي</h1> -->
             <!-- <h1>person {{$route.params.id}} board</h1> -->
         </div>
+            <hr>
         <div class="row">
             <div class="col-sm-3" v-for="list in person.lists" :key="list.name">
                 <b-card no-body :header="list.name">
@@ -53,7 +54,7 @@ export default {
         async getPerson() {
 // console.log(this.$router.params)
 
-            const response = await fetch(`/api/trackers/${this.$route.params.id}`);
+            const response = await fetch(`/api/persons/${this.$route.params.id}`);
             this.person = await response.json();
             this.person.lists = [{
                 name: 'Prayer',

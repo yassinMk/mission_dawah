@@ -3,7 +3,7 @@
     <div class="card-header">New person</div>
 
     <div class="card-body">
-      <form action="/api/trackers" method="post" @submit="submit">
+      <form action="/api/persons" method="post" @submit="submit">
         <input type="hidden" name="_token" :value="csrf">
         <div class="form-group">
           <label for="name">Name</label>
@@ -45,11 +45,15 @@ export default {
       submit(e) {
         e.preventDefault();
         console.log('this.person: ', this.person);
-        axios.post('/api/trackers',this.person)
+        axios.post('/api/persons',this.person)
         .then(res=>{
             console.log('res: ', res);
             this.$root.$emit('personAdded');
             this.person = {};
+            this.$swal({
+              type: 'success',
+              title: "Person added with success"
+            });
         });
       }
   },

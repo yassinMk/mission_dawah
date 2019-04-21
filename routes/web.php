@@ -14,7 +14,7 @@
 Auth::routes();
 
 Route::group(['prefix'=>'api'],function() {
-    Route::resource('trackers', 'TrackerController');
+    Route::resource('persons', 'PersonController');
 });
 
 Route::get('/{any}', 'HomeController@index')->where('any', '.*');

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Tracker;
+use App\Person;
 use Illuminate\Http\Request;
 
-class TrackerController extends Controller
+class PersonController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TrackerController extends Controller
      */
     public function index()
     {
-        return response()->json(Tracker::orderBy('created_at','desc')->get(), 200);
+        return response()->json(Person::orderBy('created_at','desc')->get(), 200);
     }
 
     /**
@@ -35,32 +35,32 @@ class TrackerController extends Controller
      */
     public function store(Request $request)
     {
-        error_log("post tracker");
-        $user_data = new Tracker($request->all());
+        error_log("post person");
+        $user_data = new Person($request->all());
         $user_data->save();
-        dd($user_data);
+        // dd($user_data);
         return response()->json($user_data, 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tracker  $tracker
+     * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function show(Tracker $tracker)
+    public function show(Person $person)
     {
-        // dd($tracker);
-        return response()->json($tracker, 200);
+        // dd($person);
+        return response()->json($person, 200);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Tracker  $tracker
+     * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tracker $tracker)
+    public function edit(Person $person)
     {
         //
     }
@@ -69,10 +69,10 @@ class TrackerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tracker  $tracker
+     * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tracker $tracker)
+    public function update(Request $request, Person $person)
     {
         //
     }
@@ -80,10 +80,10 @@ class TrackerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tracker  $tracker
+     * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tracker $tracker)
+    public function destroy(Person $person)
     {
         //
     }

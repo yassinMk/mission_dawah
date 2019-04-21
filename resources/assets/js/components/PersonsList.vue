@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="card">
-      <div class="card-header">The people that i will guide</div>
+      <div class="card-header">
+        The people that i will guide
+        <router-link to="/add">
+          <button class="btn btn-success float-right">new person</button>
+        </router-link>
+      </div>
       <ul class="list-group">
         <li
           class="list-group-item d-flex justify-content-between align-items-center"
@@ -84,7 +89,7 @@ export default {
       this.$refs.person.hide();
     },
     async getPersons() {
-      const response = await fetch("/api/trackers");
+      const response = await fetch("/api/persons");
       this.persons = await response.json();
     }
   },
