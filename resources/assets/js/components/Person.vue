@@ -52,10 +52,9 @@ export default {
     },
     methods: {
         async getPerson() {
-// console.log(this.$router.params)
-
             const response = await fetch(`/api/persons/${this.$route.params.id}`);
             this.person = await response.json();
+            console.log("this.person ", this.person);
             this.person.lists = [{
                 name: 'Prayer',
                 tasks : []
@@ -63,7 +62,6 @@ export default {
                 name: 'Fasting',
                 tasks : []
             }]
-
         },
         newList() {
             this.person.lists.push({
@@ -71,15 +69,16 @@ export default {
                 name: '',
                 tasks: []
             })
-                console.log('this.person.lists: ', this.person.lists);
-                this.$forceUpdate();
+            const response = await fetch.post(`/api/persons/${this.$route.params.id}`, {
+                body: {
+                    name: 'new list'
+                }
+            });
+
+            this.$forceUpdate();
         }
     },
     mounted() {
-      console.log(this.$route);  //should return object
-      console.log(this.$route.params); //should return object 
-      console.log(this.$route.params.id); //should return id of URL param 
-
         this.getPerson();
     }
 }

@@ -14,7 +14,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        return response()->json(Person::orderBy('created_at','desc')->get(), 200);
+        return response()->json(Person::with('lists')->orderBy('created_at','desc')->get(), 200);
     }
 
     /**

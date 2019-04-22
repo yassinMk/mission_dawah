@@ -1954,6 +1954,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 5:
                 this.person = _context.sent;
+                console.log("this.person ", this.person);
                 this.person.lists = [{
                   name: 'Prayer',
                   tasks: []
@@ -1962,7 +1963,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   tasks: []
                 }];
 
-              case 7:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -1982,17 +1983,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         name: '',
         tasks: []
       });
-      console.log('this.person.lists: ', this.person.lists);
       this.$forceUpdate();
     }
   },
   mounted: function mounted() {
-    console.log(this.$route); //should return object
-
-    console.log(this.$route.params); //should return object 
-
-    console.log(this.$route.params.id); //should return id of URL param 
-
     this.getPerson();
   }
 });
